@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block content  %}
+
+    <div class="col-3">
+
+        {% if products.image  %}
+            <img src="{{ products.image.url }}" alt="imagen del producto" width="200" height="200">
+        {% endif %}
+</div>
+<div class="col">
+        <div class="h1">{{ products.title }}</div>
+        <div class="h5 font-weight-bold">
+        Precio: <span class="text-danger">${{ products.price }}</span>
+        </div>
+        <div class="">
+         <p>{{ products.description }}</p>   
+        </div>
+    <div >
+        {% include 'carts/snippets/add.html' %}
+    </div>
+</div>
+   
+{% endblock %}
